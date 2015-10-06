@@ -22,6 +22,11 @@ Since some of official formulae have errors it would be best to work
 around them by running `brew install --debug xdg-app` and answering
 2 (ignore) when there are problems (namely tests in libgcrypt and gpgme)
 
+## Caveat
+
+You may need to manuall run `chmod +s $(which xdg-app-helper)` to give
+appropriate permissions to the helper binary
+
 ## Installing apps
 
 To test follow
