@@ -1,9 +1,8 @@
 class XdgApp < Formula
   desc "Application deployment framework for desktop apps"
   homepage "https://wiki.gnome.org/Projects/SandboxedApps"
-  url "http://www.freedesktop.org/software/xdg-app/releases/xdg-app-0.4.4.tar.xz"
-  version "0.4.4"
-  sha256 "d672bc83ad618c89b10b9234188c166efd58f8e0fa4095bd25a1a732696525a5"
+  url "http://www.freedesktop.org/software/xdg-app/releases/xdg-app-0.4.13.tar.xz"
+  sha256 "c4be82ba5e149edef085339b224715541b85966bd818309cc4b3bc5111991b30"
 
   head do
     url "git://anongit.freedesktop.org/xdg-app/xdg-app"
