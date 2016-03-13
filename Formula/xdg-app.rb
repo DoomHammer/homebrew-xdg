@@ -15,12 +15,12 @@ class XdgApp < Formula
 
   depends_on "glib"
   depends_on "libsoup"
-  depends_on "homebrew/xdg/libcap"
-  depends_on "homebrew/xdg/xau"
-  depends_on "homebrew/xdg/gsystem"
-  depends_on "homebrew/xdg/ostree"
-  depends_on "homebrew/xdg/fuse"
-  depends_on "homebrew/xdg/libseccomp"
+  depends_on "doomhammer/xdg/libcap"
+  depends_on "doomhammer/xdg/xau"
+  depends_on "doomhammer/xdg/gsystem"
+  depends_on "doomhammer/xdg/ostree"
+  depends_on "doomhammer/xdg/fuse"
+  depends_on "doomhammer/xdg/libseccomp"
 
   def install
     system "./autogen.sh", "--disable-documentation" if build.head?
