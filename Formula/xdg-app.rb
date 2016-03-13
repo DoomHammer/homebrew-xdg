@@ -14,12 +14,12 @@ class XdgApp < Formula
   end
 
   depends_on "glib"
+  depends_on "libcap"
   depends_on "libsoup"
-  depends_on "doomhammer/xdg/libcap"
+  depends_on "libfuse"
   depends_on "doomhammer/xdg/xau"
   depends_on "doomhammer/xdg/gsystem"
   depends_on "doomhammer/xdg/ostree"
-  depends_on "doomhammer/xdg/fuse"
   depends_on "doomhammer/xdg/libseccomp"
 
   def install
