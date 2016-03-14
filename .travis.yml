@@ -1,0 +1,38 @@
+language: ruby
+rvm:
+  - 2.0.0
+
+sudo: required
+services: docker
+os: linux
+
+before_install:
+  - umask 022
+  - if [ -f ".git/shallow" ]; then
+      travis_retry git fetch --unshallow;
+    fi
+  - export TRAVIS_COMMIT=$(git rev-parse --verify -q HEAD)
+  - docker pull linuxbrew/linuxbrew;
+    docker run
+    -v $(pwd):/home/linuxbrew/doomhammer-xdg
+      linuxbrew/linuxbrew
+      /bin/sh -c 'brew tap doomhammer/xdg && brew update && cp -rf ~/doomhammer-xdg $(brew --repo)/Library/Taps/doomhammer/homebrew-xdg';
+    docker commit $(docker ps -l -q) linuxbrew;
+  - env | grep TRAVIS | tee /tmp/travis.env
+
+install:
+  - PATH=$PWD/bin:$PATH
+  - export HOMEBREW_DEVELOPER="1"
+
+script:
+  - docker run
+      -w /home/linuxbrew/.linuxbrew/Library/Taps/doomhammer/homebrew-xdg
+      --env-file /tmp/travis.env
+      -t
+      linuxbrew
+      brew test-bot --tap=doomhammer/xdg;
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always

@@ -5,6 +5,7 @@ class Gsystem < Formula
   head do
     url "https://github.com/GNOME/libgsystem.git"
 
+    depends_on "attr"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "gtk-doc" => :build
