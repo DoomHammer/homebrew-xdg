@@ -24,7 +24,7 @@ around them by running `brew install --debug xdg-app` and answering
 
 ## Caveat
 
-You may need to manuall run `chmod +s $(which xdg-app-helper)` to give
+You may need to manually run `chmod +s $(which xdg-app-helper)` to give
 appropriate permissions to the helper binary
 
 ## Installing apps
