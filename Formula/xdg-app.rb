@@ -12,7 +12,9 @@ class XdgApp < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "elfutils"
   depends_on "glib"
+  depends_on "json-glib"
   depends_on "libcap"
   depends_on "libsoup"
   depends_on "libfuse"

@@ -12,11 +12,12 @@ class Ostree < Formula
 
   depends_on "e2fsprogs"
   depends_on "gpgme"
+  depends_on "libarchive"
 
   def install
     system "./autogen.sh", "--prefix=#{prefix}" if build.head?
 
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--enable-man=no"
 
     system "make", "install"
   end
