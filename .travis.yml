@@ -1,10 +1,7 @@
 language: ruby
 rvm:
   - 2.0.0
-
-sudo: required
 services: docker
-os: linux
 
 before_install:
   - umask 022
@@ -14,9 +11,9 @@ before_install:
   - export TRAVIS_COMMIT=$(git rev-parse --verify -q HEAD)
   - docker pull linuxbrew/linuxbrew;
     docker run
-    -v $(pwd):/home/linuxbrew/doomhammer-xdg
+    -v $(pwd):/home/linuxbrew/homebrew-xdg
       linuxbrew/linuxbrew
-      /bin/sh -c 'brew tap doomhammer/xdg && brew update && cp -rf ~/doomhammer-xdg $(brew --repo)/Library/Taps/doomhammer/homebrew-xdg';
+      /bin/sh -c 'brew tap doomhammer/xdg && brew update && cp -rf ~/homebrew-xdg $(brew --repo)/Library/Taps/doomhammer/homebrew-xdg';
     docker commit $(docker ps -l -q) linuxbrew;
   - env | grep TRAVIS | tee /tmp/travis.env
 
