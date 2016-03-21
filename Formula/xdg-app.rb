@@ -18,7 +18,7 @@ class XdgApp < Formula
   depends_on "libcap"
   depends_on "libsoup"
   depends_on "libfuse"
-  depends_on "doomhammer/xdg/xau"
+  depends_on "linuxbrew/xorg/libxau"
   depends_on "doomhammer/xdg/gsystem"
   depends_on "doomhammer/xdg/ostree"
   depends_on "doomhammer/xdg/libseccomp"
